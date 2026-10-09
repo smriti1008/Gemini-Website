@@ -1,16 +1,116 @@
-# React + Vite
+# Gemini AI Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive AI chatbot inspired by Google Gemini, built using React and the Gemini API. The application allows users to submit prompts, view AI-generated responses, and access their recent prompts through a sidebar.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **AI-Powered Conversations:** Generate responses using the Gemini API.
+* **Recent Prompts:** View previously submitted questions in the sidebar.
+* **Dynamic Response Rendering:** Display AI responses with formatted text.
+* **Loading Animation:** Show a loading indicator while waiting for responses.
+* **Interactive User Interface:** Clean and intuitive chatbot layout.
+* **React Context API:** Manage application state and share data across components.
+* **Responsive Design:** Designed for a smooth user experience across screen sizes.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Frontend:** React.js, JavaScript, HTML5, CSS3
+* **Build Tool:** Vite
+* **AI Integration:** Google Gemini API
+* **State Management:** React Context API
+* **Version Control:** Git and GitHub
 
-## Expanding the Oxlint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```text
+gemini-clone/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── Main/
+│   │   └── Sidebar/
+│   ├── config/
+│   │   └── gemini.js
+│   ├── context/
+│   │   └── context.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── .env
+├── .gitignore
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+*The folder structure may vary depending on your implementation.*
+
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone <your-repository-url>
+cd gemini-clone
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure the Gemini API
+
+Obtain an API key from [Google AI Studio](https://aistudio.google.com/).
+
+Create a `.env` file in the project's root directory:
+
+```env
+VITE_GEMINI_API_KEY=your_api_key_here
+```
+
+Ensure that your `gemini.js` file reads the environment variable correctly.
+
+**Security:** Never commit your API key to GitHub. Add `.env` to your `.gitignore` file. For a publicly deployed application, use a backend to protect your API key.
+
+### 4. Run the Application
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal, usually `http://localhost:5173`.
+
+## How It Works
+
+1. The user enters a question in the chat input.
+2. React Context manages the prompt, recent prompts, loading state, and response data.
+3. The prompt is sent to the Gemini API through the `runChat` function.
+4. The API response is processed and displayed in the chat interface.
+5. Previously submitted prompts are stored in application state and displayed in the sidebar.
+
+## Future Improvements
+
+* Persistent chat history using local storage or a database.
+* Markdown rendering and syntax highlighting for code responses.
+* Error handling and retry functionality for failed API requests.
+* Multiple conversation support.
+* Dark mode and additional UI customization.
+* Secure backend integration for API requests.
+
+## Learning Outcomes
+
+This project helped me practice React component architecture, Context API, asynchronous JavaScript, API integration, state management, and dynamic UI rendering.
+
+## Author
+
+**Smriti Singh**
+
+* GitHub: [smriti1008](https://github.com/smriti1008)
+
+---
+
+If you found this project useful, consider giving the repository a star!
+
