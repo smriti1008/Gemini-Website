@@ -122,7 +122,7 @@
 .result{
     padding: 0px 5%;
     max-height: 70vh;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .result::-webkit-scrollbar{

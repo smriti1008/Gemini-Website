@@ -1,4 +1,5 @@
 import React, {useContext} from "react";
+import ReactMarkdown from 'react-markdown';
 import './main.css'
 import { assets } from "../../assets/assets";
 import { Context } from "../../context/context";
@@ -54,7 +55,9 @@ const Main = () =>{
                         <hr />
                         <hr />
                     </div>
-                    :<p dangerouslySetInnerHTML={{__html:resultData}}></p>
+                    :<div className="result-data">
+                        <ReactMarkdown>{resultData}</ReactMarkdown>
+                    </div>
                     }
                     
                 </div>
